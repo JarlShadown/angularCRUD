@@ -28,18 +28,18 @@ export class DialogComponent implements OnInit {
     })
   }
   addProduct(){
-  if(this.productForm.valid){
-    this.api.postProduct(this.productForm.value)
-    .subscribe({
-        next:(res)=>{
-          alert("Product added succesfully");
-          this.productForm.reset();
-          this.dialogRef.close('save');
-        },
-        error:()=>{
-          alert("Error while adding the product");
-        }
-      })
+    if(this.productForm.valid){
+      this.api.postProduct(this.productForm.value)
+      .subscribe({
+          next:(res)=>{
+            alert("Product added succesfully");
+            this.productForm.reset();
+            this.dialogRef.close('save');
+          },
+          error:()=>{
+            alert("Error while adding the product");
+          }
+        })
     }
   }
 }
